@@ -9,7 +9,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import ConfusionMatrixDisplay, RocCurveDisplay, PrecisionRecallDisplay
 from sklearn.metrics import precision_score, recall_score 
-from math import round
+import math
 
 def main():
     st.title("🍄 Mushroom Classification Web App")
@@ -67,9 +67,9 @@ def main():
             model.fit(x_train, y_train)
             accuracy = model.score(x_test, y_test)
             y_pred = model.predict(x_test)
-            st.write("Accuracy: ", round(accuracy,2))
-            st.write("Precision: ", round(precision_score(y_test, y_pred, labels=class_names),2))
-            st.write("Recall: ", round(recall_score(y_test, y_pred , labels=class_names),2))
+            st.write("Accuracy: ", math.round(accuracy,2))
+            st.write("Precision: ", math.round(precision_score(y_test, y_pred, labels=class_names),2))
+            st.write("Recall: ", math.round(recall_score(y_test, y_pred , labels=class_names),2))
             plot_metrics(metrics)
     
     if classifier == 'Logistic Regression':
@@ -88,9 +88,9 @@ def main():
             model.fit(x_train, y_train)
             accuracy = model.score(x_test, y_test)
             y_pred = model.predict(x_test)
-            st.write("Accuracy: ", round(accuracy,2))
-            st.write("Precision: ", round(precision_score(y_test, y_pred, labels=class_names),2))
-            st.write("Recall: ", round(recall_score(y_test, y_pred , labels=class_names),2))
+            st.write("Accuracy: ", math.round(accuracy,2))
+            st.write("Precision: ", math.round(precision_score(y_test, y_pred, labels=class_names),2))
+            st.write("Recall: ", math.round(recall_score(y_test, y_pred , labels=class_names),2))
             plot_metrics(metrics)
 
     if classifier == 'Random Forest':
@@ -114,9 +114,9 @@ def main():
             model.fit(x_train, y_train)
             accuracy = model.score(x_test, y_test)
             y_pred = model.predict(x_test)
-            st.write("Accuracy: ", round(accuracy),2)
-            st.write("Precision: ", round(precision_score(y_test, y_pred, labels=class_names),2))
-            st.write("Recall: ", round(recall_score(y_test, y_pred , labels=class_names),2))
+            st.write("Accuracy: ", math.round(accuracy),2)
+            st.write("Precision: ", math.round(precision_score(y_test, y_pred, labels=class_names),2))
+            st.write("Recall: ", math.round(recall_score(y_test, y_pred , labels=class_names),2))
             plot_metrics(metrics)
 
 
