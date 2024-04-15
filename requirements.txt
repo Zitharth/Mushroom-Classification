@@ -2,4 +2,5 @@ numpy
 pandas
 scikit-image
 scikit-learn
+scikit-plot
 scipy
